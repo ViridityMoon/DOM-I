@@ -39,4 +39,87 @@ const siteContent = {
 
 // Example: Update the img src for the logo
 let logo = document.getElementById("logo-img");
-logo.setAttribute('src', siteContent["nav"]["img-src"])
+logo.setAttribute('src', siteContent["nav"]["img-src"]);
+
+
+
+const aTags = document.querySelectorAll('a');
+console.log(aTags);
+aTags.forEach((node, i) => {
+  node.textContent = siteContent.nav[`nav-item-${i+1}`];
+  node.style.color = 'green';
+});
+
+const nav = document.querySelector('nav');
+nav.style.color = 'green';
+
+nav.append('thing');
+nav.prepend('nice');
+
+const splashImage = document.getElementsByTagName('img')[1];
+splashImage.setAttribute('src', siteContent.cta['img-src']);
+
+const h1 = document.querySelector('h1');
+h1.textContent = siteContent.cta.h1;
+
+const button = document.querySelector('button');
+button.textContent = siteContent.cta.button;
+
+const mainContent = document.querySelector('.main-content');
+// console.log(mainContent);
+
+const features = mainContent.getElementsByTagName('h4')[0];
+features.textContent = siteContent["main-content"]['features-h4'];
+
+const featuresContent = mainContent.getElementsByTagName('p')[0];
+featuresContent.textContent = siteContent['main-content']['features-content'];
+
+const about = mainContent.getElementsByTagName('h4')[1];
+about.textContent = siteContent['main-content']['about-h4'];
+
+const aboutContent = mainContent.getElementsByTagName('p')[1];
+aboutContent.textContent = siteContent['main-content']['about-content'];
+
+const middleImage = document.getElementsByTagName('img')[2];
+middleImage.setAttribute('src', siteContent['main-content']['middle-img-src']);
+
+const bottomContent = mainContent.querySelector('.bottom-content');
+// console.log(bottomContent);
+
+const services = bottomContent.getElementsByTagName('h4')[0];
+services.textContent = siteContent['main-content']['services-h4'];
+
+const servicesContent = bottomContent.getElementsByTagName('p')[0]
+servicesContent.textContent = siteContent['main-content']['services-content'];
+
+const product = bottomContent.getElementsByTagName('h4')[1];
+product.textContent = siteContent['main-content']['product-h4'];
+
+const productContent = bottomContent.getElementsByTagName('p')[1];
+productContent.textContent = siteContent['main-content']['product-content'];
+
+const vision = bottomContent.getElementsByTagName('h4')[2];
+vision.textContent = siteContent['main-content']['vision-h4'];
+
+const visionContent = bottomContent.getElementsByTagName('p')[2];
+visionContent.textContent = siteContent['main-content']['vision-content'];
+
+const contactSection = document.querySelector('.contact');
+console.log(contactSection);
+
+const contact = contactSection.getElementsByTagName('h4')[0];
+contact.textContent = siteContent['contact']['contact-h4'];
+
+const address = contactSection.getElementsByTagName('p')[0];
+address.textContent = siteContent.contact.address;
+
+const phone = contactSection.getElementsByTagName('p')[1];
+phone.textContent = siteContent.contact.phone;
+
+const email = contactSection.getElementsByTagName('p')[2];
+email.textContent = siteContent.contact.email;
+
+const footer = document.querySelector('footer p');
+footer.textContent = siteContent['footer']['copyright'];
+
+
