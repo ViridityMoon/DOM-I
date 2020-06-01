@@ -44,13 +44,17 @@ logo.setAttribute('src', siteContent["nav"]["img-src"]);
 
 
 const aTags = document.querySelectorAll('a');
-// console.log(aTags);
+console.log(aTags);
 aTags.forEach((node, i) => {
   node.textContent = siteContent.nav[`nav-item-${i+1}`];
+  node.style.color = 'green';
 });
 
-const nav = querySelector('nav');
+const nav = document.querySelector('nav');
+nav.style.color = 'green';
 
+nav.append('thing');
+nav.prepend('nice');
 
 const splashImage = document.getElementsByTagName('img')[1];
 splashImage.setAttribute('src', siteContent.cta['img-src']);
@@ -101,10 +105,10 @@ const visionContent = bottomContent.getElementsByTagName('p')[2];
 visionContent.textContent = siteContent['main-content']['vision-content'];
 
 const contactSection = document.querySelector('.contact');
-// console.log(contactSection);
+console.log(contactSection);
 
-const contact = contactSection.getElementsByTagName('h4');
-contact.textContent = siteContent.contact['contact-h4'];
+const contact = contactSection.getElementsByTagName('h4')[0];
+contact.textContent = siteContent['contact']['contact-h4'];
 
 const address = contactSection.getElementsByTagName('p')[0];
 address.textContent = siteContent.contact.address;
@@ -115,8 +119,7 @@ phone.textContent = siteContent.contact.phone;
 const email = contactSection.getElementsByTagName('p')[2];
 email.textContent = siteContent.contact.email;
 
-const footerSection = document.querySelector('footer');
-// console.log(footerSection)
+const footer = document.querySelector('footer p');
+footer.textContent = siteContent['footer']['copyright'];
 
-const footer = footerSection.getElementsByTagName('p');
-footer.textContent = siteContent.footer.copyright;
+
